@@ -109,14 +109,48 @@ public class test2 {
 		System.out.println("1에서 5까지의 합은 : " + sum + "이다.");*/
 		//수의 합
 		
-		System.out.print("숫자를 입력해주세요.");
+		/*System.out.print("숫자를 입력해주세요.");
 		int num = scan.nextInt();
 		for (int i = 1; i <= num; i++) {
 			if (num % i == 0) {
 				System.out.print(i + " ");
 			}
-		}
+		}*/
 		//수의 약수
+		
+		/*System.out.print("숫자를 입력해주세요.");
+		int num = scan.nextInt();
+		int a = 0;
+		for (int i = 1; i <= num; i++) {
+			if (num % i == 0) {
+				a++;
+			}
+		}
+		if (a == 2) {
+			System.out.println("소수");
+		}
+		else {
+			System.out.println("소수아님");
+		}*/
+		//소수판별하기
+		
+		System.out.print("숫자를 입력하세요. : ");
+		int cont = 0;
+		int i = 0;
+		int j = 0;
+		int n = scan.nextInt();
+		for (i = 1; i <= n; i++) {
+			for (j = 1; j <= n-1; j++ ) {
+				if (i % j == 0) {
+					cont++;
+				}
+			}
+			if (cont == 2) {
+				System.out.println(i);
+			}
+			cont = 0;
+		}
+		//소수인 숫자 나타내기
 		
 		scan.close();
 	}
