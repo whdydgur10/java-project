@@ -97,10 +97,6 @@ public class ExamArray2 {
 				}
 				cout3 = 0;
 			}
-			/*for(int emp : arr4) {
-				System.out.print(emp);
-			}
-			System.out.println();//정답*/
 			System.out.println("숫자를 입력해주세요.");
 			A : for(int i = 0; i < n; i++) {
 				s = 0;
@@ -139,7 +135,6 @@ public class ExamArray2 {
 		}
 		System.out.println("게임을 끝내겠습니다.");
 		//숫자야구
-
 	}
 
 }
