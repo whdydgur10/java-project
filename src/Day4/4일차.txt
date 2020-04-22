@@ -1,0 +1,18 @@
+int[] arr1 = new int[5];
+int[] arr2 = new int[] {1,2,3,4,5};
+1. 향상된 for문
+ 1)배열의 모든 값을 탐색하는 경우
+ 2)배열의 값을 수정하지 않는 경우
+for(int i = 0; i <arr2.length; i++) {	for(int tmp : arr2) {
+	실행문;				실행문;
+}				}
+
+2. String : 문자열을 관리하는 클래스 - 참조변수
+
+
+
+
+
+
+
+
