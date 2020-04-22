@@ -133,20 +133,19 @@ public class test3 {
 			}
 			System.out.println();
 		}*/
-		int[] arr1 = new int[10];
+		/*int[] arr1 = new int[10];
 		int[] arr2 = new int[10];
 		arr1[0] = 1;
-		for(i = 0; i < arr1.length;) {
+		for(i = 0; i < arr1.length; i++) {
 			if(i > 0 ) {
-				arr2[i] = arr1[i] + arr1[i-1];
+				arr2[i] = arr1[i]+arr1[i-1];
 			}
 			arr2[i] = arr1[i];
-			++i;
 			for(j = 0; j < i; j++) {
 				if ( j > 0) {
-					arr1[i] = arr2[j] + arr2[j-1];
+					arr1[j+1] = arr2[j] + arr2[j-1];
 				}
-				arr1[i] = arr2[j];
+				arr1[j+1] = arr2[j];
 			}
 		}
 		for(i = 0; i < arr1.length; i++) {
@@ -156,7 +155,38 @@ public class test3 {
 		System.out.println("-----------------------------------------");
 		for(i = 0; i < arr2.length; i++) {
 			System.out.print(arr2[i] + " ");
+		}*/
+		int[] arr1 = new int[10];
+		int[] arr2 = new int[10];
+		arr1[0] = 1;
+		j = 0;
+		for(i = 0; i < arr1.length; i++) {
+			if(i < 1) {
+				arr2[i] = arr1[i];
+				arr2[i+1] = arr1[i];
+			}
+			for(j = 0; j < i; j++) {
+				if(i > 0) {
+					arr2[i] = arr1[i]+ arr1[i-1];	
+				}
+				if(j < 1 ) {
+					arr1[j+1] = arr2[j];
+				}
+				if(j > 0) {
+					arr1[i] = arr2[i] + arr2[i-1];
+				}
+			}
 		}
+		for(i = 0; i < arr1.length; i++) {
+			System.out.print(arr1[i] + " ");
+		}
+		System.out.println();
+		
+		System.out.println("-----------------------------------------");
+		for(i = 0; i < arr2.length; i++) {
+			System.out.print(arr2[i] + " ");
+		}
+		
 		scan.close();
 	}
 }
