@@ -85,6 +85,7 @@ public class ExamArray2 {
 			int s = 0;
 			int q = 0;
 			int j = 0;
+			int n = 10;
 			for (int i = 0; i < arr4.length; i++) {
 				int random3 = (int)(Math.random()*(max3-min3+1)+min3);
 				arr4[i] = random3;
@@ -101,7 +102,7 @@ public class ExamArray2 {
 			}
 			System.out.println();//정답*/
 			System.out.println("숫자를 입력해주세요.");
-			A : for(int i = 0; i < 5; i++) {
+			A : for(int i = 0; i < n; i++) {
 				s = 0;
 				b = 0;
 				arr5[0] = scan.nextInt();
@@ -125,6 +126,11 @@ public class ExamArray2 {
 				System.out.printf("S : %d, B : %d\n",s, b);
 				System.out.println("숫자를 다시 입력해주세요.");
 			}
+			System.out.print("정답은 : ");
+			for(int tmp : arr4) {
+				System.out.print(tmp + " ");
+			}
+			System.out.println("입니다.");
 			System.out.println("게임을 다시 시작하겠습니까? 예-0, 아니오-1");
 			y = scan.nextInt();
 			if (y == 1) {
