@@ -137,6 +137,7 @@ public class ExamArray2 {
 				break;
 			}
 		}
+		System.out.println("게임을 끝내겠습니다.");
 		//숫자야구
 
 	}
