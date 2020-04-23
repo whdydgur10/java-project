@@ -22,6 +22,23 @@ public class test3 {
 		}
 		System.out.println("두 수의 최대 공약수는 : " + gcd + "입니다.");*/
 		//두 수의 최대 공약수
+		/*System.out.println("최대공약수를 구하고 싶은 두 수를 입력하세요.");
+		System.out.print("첫번째 숫자는 : ");
+		int n = scan.nextInt();
+		System.out.print("두번째 숫자는 : ");
+		int n2 = scan.nextInt();
+		int cont = 0;
+		int[] arr1 = new int[5];
+		for (i = 1; i <= n; i++) {
+			if (n % i == 0 && n2 % i == 0) {
+				arr1[cont] = i;
+				cont++;
+			}
+		}
+		for(int tmp : arr1) {
+			System.out.printf(tmp + " ");
+		}*/
+		//두 수의 공약수 배열
 		
 		/*for (i = 2; i <= 9; i++) {
 			System.out.println("    " + i +"단");
@@ -156,7 +173,7 @@ public class test3 {
 		for(i = 0; i < arr2.length; i++) {
 			System.out.print(arr2[i] + " ");
 		}*/
-		int[] arr1 = new int[10];
+		/*int[] arr1 = new int[10];
 		int[] arr2 = new int[10];
 		arr1[0] = 1;
 		j = 0;
@@ -185,7 +202,7 @@ public class test3 {
 		System.out.println("-----------------------------------------");
 		for(i = 0; i < arr2.length; i++) {
 			System.out.print(arr2[i] + " ");
-		}
+		}*/
 		
 		scan.close();
 	}
