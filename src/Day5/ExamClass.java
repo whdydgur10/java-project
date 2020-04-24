@@ -20,7 +20,7 @@ public class ExamClass {
 		p1 = new Point(1,2);
 		p1.x1 = 10;
 		//p1.x1은 default이기 때문에 Point와 같은 패키지인 ExamClass에서 쓸 수 있다.
-		//p1.x2는 private이기 때문에 Point와 다른 클래스인 ExamClass에서는 쓸 수 없다.
+		//p1.x2는 private이기 때문에 Point와 다른 클래스인 ExamClass에서도 쓸 수 없다.
 		p1.x3 = 10;
 		//p1.x3는 public이기 때문에 누구든지 사용 가능하다.
 		
