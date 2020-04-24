@@ -29,13 +29,14 @@ public class Day5_3 {
 			num = x % y;
 		}
 		return num;*/
-		
-		for(int i = 0; i <= 5; i++) {
+		int n = 5;
+		for(int i = 0; i <= n; i++) {
 			for(int j = 0; j <= i; j++ ) {
 				System.out.print((char)('a'+ j));
 			}
 			System.out.println();
 		}
+		
 		int n1 = 3;
 		int n2 = 5;
 		int n3 = 1;
