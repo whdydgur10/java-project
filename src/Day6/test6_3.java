@@ -8,18 +8,18 @@ public class test6_3 {
 		Scanner scan = new Scanner(System.in);
 		Lotto lotto = new Lotto();
 		int cont = 8;
-		int[] lonum = new int[8];
+		Lotto[] lonum = new Lotto[8];
 		System.out.print("로또 번호 입력 : ");
 		for(int i = 0; i < cont; i++) {
 			lonum[i] = scan.nextInt();
-			lotto.setPlayn(lonum[i]);
+			lotto.setPlayer[i] = (lonum[i]);
 		}
 		for(int i = 0; i < cont; i++) {
 			System.out.print(lotto.playn + " ");
 		}
 		scan.close();
 		//lotto.make_num();
-		//lotto.show_num();
+		lotto.show_num();
 
 	}
 
@@ -28,11 +28,11 @@ class Lotto {
 	int num = 45, cont = 8, playn;
 	private int[] lo_num = new int[num];
 	int[] player = new int[7];
-	public int getPlayn() {
-		return playn;
+	public int[] getPlayer() {
+		return player;
 	}
-	public void setPlayn(int playn) {
-		this.playn = playn;
+	public void setPlayer(int[] player) {
+		this.player = player;
 	}
 	public void make_num() {
 		for(int i = 0; i < lo_num.length; i++) {

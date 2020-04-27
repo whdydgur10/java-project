@@ -35,15 +35,17 @@ public class Day5_2 {
 				b_s = scan.next();
 				//문자열 b_s를 입력
 				//nextLine()은 정수형 n의 값을 입력하고 enter를 한 값이 남아있다 적용이 되어 넘어가게 된다.
-				if(b_s == "up") {
+				if(b_s.equals("up")) {
 				//문자열 b_s에 "up"을 적었을 때
+				//==는 주소값을 비교하고 equals는 내용을 비교한다.
 					sound += 1;
 					//정수형 sound를 +1한다
 					phone.setBolum_s(sound);
 					phone.bolum_s(sound);
 					//phone이라는 객체를 통해 Bolum_s를 sound로 설정한다.
-				}else if(b_s == "down") {
+				}else if(b_s.compareTo("down") == 0) {
 				//문자열 b_s에 "down"을 적었을 때
+				//a.compareTo(b) 숫자를 비교할 때는 -1, 0, 1만을 나타내고 문자열은 다양하게 나타낸다.
 					sound -= 1;
 					//정수형 sound를 -1한다
 					phone.setBolum_s(sound);
@@ -59,7 +61,6 @@ public class Day5_2 {
 				number = scan.nextLine();
 				//문자열 number를 입력
 				//정수형 n의 값을 입력하고 남은 enter값을 날려주기 위해 nextLine을 한번 더 사용했다.
-				phone.setPhone_num(number);
 				phone.set_num(number);
 				//phone이라는 객체를 통해 Phone_num을 number로 설정한다
 			}
@@ -78,7 +79,7 @@ class Iphone {
 	//class변수 제조사
 	String phone_num = "010-1234-5678";
 	//객체변수 폰번호
-	int bolum_s = 0;
+	int bolum_s = 5;
 	//객체변수 볼륨크기
 	public void bolum_s(int s) {
 	//객체메소드 볼륨조절
