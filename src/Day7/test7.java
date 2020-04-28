@@ -9,7 +9,7 @@ public class test7 {
 		int num = scan.nextInt();
 		int start = scan.nextInt();
 		int end = scan.nextInt();*/
-		/*int n = 8, l = 9, j = 0, cont = 1;
+		int n = 8, l = 9, j = 0, cont = 1;
 		int num = n * l;
 		int[] arr = new int[num];
 		for(int i = 0; i < n; i++) {
@@ -30,8 +30,8 @@ public class test7 {
 			cont = cont + l;
 			System.out.println();
 			}
-		}*/
-		int n = 5, l = 6, j = 0, cont = 1;
+		}
+		/*int n = 5, l = 6, j = 0, cont = 1;
 		int[][] arr = new int[n][l];
 		for(int i = 0; i < n; i++) {
 			if(i % 2 == 0) {
@@ -51,7 +51,7 @@ public class test7 {
 			cont = cont + l;
 			System.out.println();
 			}
-		}
+		}*/
 	}
 		/*int res = printMultipltable(num, start, end);
 		//출력을 한 후 리턴값 판별

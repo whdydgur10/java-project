@@ -7,12 +7,11 @@ public class test6_3 {
 	public static void main(String[] args) {
 		Scanner scan = new Scanner(System.in);
 		Lotto lotto = new Lotto();
-		int cont = 8;
-		Lotto[] lonum = new Lotto[8];
+		int cont = 7;
+		Lotto[] lonum = new Lotto[7];
 		System.out.print("로또 번호 입력 : ");
 		for(int i = 0; i < cont; i++) {
-			lonum[i] = scan.nextInt();
-			lotto.setPlayer[i] = (lonum[i]);
+			
 		}
 		for(int i = 0; i < cont; i++) {
 			System.out.print(lotto.playn + " ");
@@ -25,7 +24,7 @@ public class test6_3 {
 
 }
 class Lotto {
-	int num = 45, cont = 8, playn;
+	int num = 45, cont = 7, playn;
 	private int[] lo_num = new int[num];
 	int[] player = new int[7];
 	public int[] getPlayer() {
