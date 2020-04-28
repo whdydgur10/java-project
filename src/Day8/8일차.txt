@@ -39,6 +39,6 @@ private : 해당클래스
 this()와 super()는 생성자 코드에서만 사용가능하다.
 this는 내 객체정보, this()는 내 생성자, super는 부모 객체정보, super()는 부모 생성자
 
-
+ 
 
 
