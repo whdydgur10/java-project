@@ -6,12 +6,25 @@ class Main {
 
     public static void main(String[] args) {
     	Scanner scan = new Scanner(System.in);
-    	int a = scan.nextInt();
-    	int b = scan.nextInt();
-    	int c = b+100-a;
-    	System.out.println(c);
-    	if(c > 0) {
-    		System.out.println("Obesity");
-    	}
+		char lang = scan.next().charAt(0);
+		switch(lang) {
+		case 'A' :
+			System.out.print("Excellent");
+			break;
+		case 'B' :
+			System.out.print("Good");
+			break;
+		case 'C' :
+			System.out.print("Usually");
+			break;
+		case 'D' :
+			System.out.print("Effort");
+			break;
+		case 'F' :
+			System.out.print("Failure");
+			break;
+		default :
+			System.out.print("error");
+		}
    	}
 }

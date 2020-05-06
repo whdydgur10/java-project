@@ -78,48 +78,48 @@ public class ExamArray2 {
 		while(y == 0) {
 			int[] arr4 = new int[4];
 			int[] arr5 = new int[4];
-			int max3 = 9;
-			int min3 = 0;
-			int cout3 = 0;
-			int b = 0;
-			int s = 0;
-			int q = 0;
-			int j = 0;
-			int n = 10;
+			int comMax = 9;
+			int comMin = 0;
+			int cnt = 0;
+			int ball = 0;
+			int strike = 0;
+			int ballCnt = 0;
+			int strikeCnt = 0;
+			int playNum = 10;
 			for (int i = 0; i < arr4.length; i++) {
-				int random3 = (int)(Math.random()*(max3-min3+1)+min3);
+				int random3 = (int)(Math.random()*(comMax-comMin+1)+comMin);
 				arr4[i] = random3;
-				for(cout3 = 0; cout3 < i; cout3++) {
-					if(arr4[i] == arr4[cout3]) {
+				for(cnt = 0; cnt < i; cnt++) {
+					if(arr4[i] == arr4[cnt]) {
 						i--;
 						break;
 					}
 				}
-				cout3 = 0;
+				cnt= 0;
 			}
 			System.out.println("숫자를 입력해주세요.");
-			A : for(int i = 0; i < n; i++) {
-				s = 0;
-				b = 0;
+			A : for(int i = 0; i < playNum; i++) {
+				strike = 0;
+				ball = 0;
 				arr5[0] = scan.nextInt();
 				arr5[1] = scan.nextInt();
 				arr5[2] = scan.nextInt();
 				arr5[3] = scan.nextInt();
-				for(j = 0; j < 4; j++) {
-					if(arr5[j] == arr4[j]) {
-						s++;
+				for(strikeCnt = 0; strikeCnt < 4; strikeCnt++) {
+					if(arr5[strikeCnt] == arr4[strikeCnt]) {
+						strike++;
 					}
-					for( q = 0; q < 4; q++) {
-						if(arr5[j] == arr4[q] && arr5[q] != arr4[q]) {
-							b++;
+					for(ballCnt = 0; ballCnt < 4; ballCnt++) {
+						if(arr5[strikeCnt] == arr4[ballCnt] && arr5[ballCnt] != arr4[ballCnt]) {
+							ball++;
 						}
 					}
-					if(s == 4) {
+					if(strike == 4) {
 						System.out.println("정답입니다.");
 						break A;
 					}
 				}
-				System.out.printf("S : %d, B : %d\n",s, b);
+				System.out.printf("S : %d, B : %d\n",strike, ball);
 				System.out.println("숫자를 다시 입력해주세요.");
 			}
 			System.out.print("정답은 : ");

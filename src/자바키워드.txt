@@ -1,0 +1,13 @@
+boolean char byte short int long float double Scanner close 
+print println printf if if~else if~else if~else switch~case~default
+for while	do~while break continue int[] String String[] class
+public private default protected static void Math.random ;
+%d %s %c %f %b \n String...str this super final extends nextInt
+next next().charAt(0) nextLine new length package import
+java.util.* System.arraycopy equals compareTo get set abstract 
+interface implements
+
+
+
+
+

@@ -45,7 +45,7 @@ public class Day5_2 {
 					//phone이라는 객체를 통해 Bolum_s를 sound로 설정한다.
 				}else if(b_s.compareTo("down") == 0) {
 				//문자열 b_s에 "down"을 적었을 때
-				//a.compareTo(b) 숫자를 비교할 때는 -1, 0, 1만을 나타내고 문자열은 다양하게 나타낸다.
+				//a.compareTo(b) 숫자를 비교할 때는 -1, 0, 1만을 나타내고 문자열은 다양하게 나타낸다.같을 때 0을 나타낸다.
 					sound -= 1;
 					//정수형 sound를 -1한다
 					phone.setBolum_s(sound);

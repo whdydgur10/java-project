@@ -14,10 +14,9 @@ public class test7_6 {
 			}
 			game.numcompare();
 		}
+		game.showNumber();
 		System.out.println("게임 끝");
-		
 	}
-
 }
 class baseball {
 	private int[] baseNum = new int[3];
@@ -29,12 +28,6 @@ class baseball {
 	}
 	public void setBaseNum(int[] baseNum) {
 		this.baseNum = baseNum;
-	}
-	public int[] getPlayerNum() {
-		return playerNum;
-	}
-	public void setPlayerNum(int[] playerNum) {
-		this.playerNum = playerNum;
 	}
 	public int getStrike() {
 		return strike;
@@ -55,14 +48,15 @@ class baseball {
 			for(int j = 0; j < i; j++) {
 				if(baseNum[i] == baseNum[j]) {
 					i--;
-					
 				}
 			}
 		}
 	}public void showNumber() {
+		System.out.print("정답 : ");
 		for(int i = 0; i < baseNum.length; i++) {
 			System.out.print(baseNum[i]+ " ");
 		}
+		System.out.println();
 	}
 	public void numcompare() {
 		for(int i = 0; i < baseNum.length; i++) {

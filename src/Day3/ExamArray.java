@@ -39,8 +39,8 @@ public class ExamArray {
 		arr2 = new int[] {1, 2, 3, 4, 5};
 		arr3 = new int[] {2, 4, 6, 8, 10};
 		//arr2 = arr3; arr3가 만든 배열을 arr2와 arr3가 공유하게 됨 arr2의 배열이 사라짐
-		System.arraycopy(arr2, 0, arr3, 0, arr2.length);
-		for(int i = 0; i <arr1.length-1; i++) {
+		System.arraycopy(arr2, 0, arr3, 0, arr2.length-1);
+		for(int i = 0; i <arr1.length; i++) {
 			System.out.print(arr3[i] + " ");
 		}
 		scan.close();
