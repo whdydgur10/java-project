@@ -39,6 +39,7 @@ public class StudentProjectTest {
 							studentNum = scan.nextInt() - 1;
 							System.out.println("학생정보입니다.");
 							Student.adjustmentNum = studentNum;
+							System.out.println(studentNum);
 							Student.showStudent();
 							Student.adjustmentManu();
 							adjustmentNum = scan.nextInt();
@@ -285,11 +286,19 @@ class Student extends School{
 	}
 	//학년,반,번호,이름 추가에 따른 전체 학생수 추가
 	static void adjustmentStudent(String adjustment) {
+		int adga = Integer.parseInt(adjustment);
+		int adgo = Integer.parseInt(studentInfo[studentNum-1][2]);
+		int dega = Integer.parseInt(adjustment);
+		System.out.println(dega);
 		switch(Student.adjustment) {
 		case "학년" : 
+			classNum[adga-2][adgo-1] -= 1;
+			classNum[adga-1][adgo-1] += 1;
 			studentInfo[adjustmentNum][1] = adjustment;
 			break;
 		case "반" : 
+			classNum[adga-1][adgo-1] -= 1;
+			classNum[adga-1][adgo] += 1;
 			studentInfo[adjustmentNum][2] = adjustment;
 			break;
 		case "번호" : 
