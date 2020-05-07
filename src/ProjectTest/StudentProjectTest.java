@@ -1,17 +1,13 @@
-package Project;
+package ProjectTest;
 
 import java.util.*;
 
-public class StudentProject {
+public class StudentProjectTest {
 
 	public static void main(String[] args) {
-		String str = "1";
-		int a = Integer.parseInt(str);
-		a += 1;
-		System.out.println(a);
 		Scanner scan = new Scanner(System.in);
 		int studentNum, adjustmentNum;
-		String adjustment, choice;
+		String adjustment, choice ,studentName;
 		boolean conti = false;
 		while (conti == false) {
 			Student.manu();
@@ -34,34 +30,73 @@ public class StudentProject {
 						Student.studentNum++;
 						break;
 					}else if(manuNum == 2) {
-						Student.showStudentName();
-						System.out.println("정보를 수정할 학생을 선택하세요.");
-						studentNum = scan.nextInt() - 1;
-						System.out.println("학생정보입니다.");
-						Student.adjustmentNum = studentNum;
-						Student.showStudent();
-						Student.adjustmentManu();
-						adjustmentNum = scan.nextInt();
-						if(adjustmentNum == 1) {
-							System.out.print("수정할 항목을 입력하세요. : ");
-							Student.adjustment = scan.next();
-							System.out.print("수정 내용을 입력하세요. : ");
-							adjustment = scan.next();
-							Student.adjustmentStudent(adjustment);
-							break;
-						}else if(adjustmentNum == 2) {
-							System.out.print("국어 : ");
-							String language= scan.next(); 
-							System.out.print("영어 : ");
-							String english=scan.next();
-							System.out.print("수학 : ");
-							String math=scan.next();
-							System.out.print("사회 : ");
-							String society=scan.next();
-							System.out.print("과학 : ");
-							String science=scan.next();
-							Subject.adjustmentScore(language, english, math, society, science);
-							break;
+						System.out.println("학생정보 수정입니다.");
+						System.out.println("1.등록학생순 수정 2.반별 학생 수정");
+						int clst = scan.nextInt();
+						if(clst == 1) {
+							Student.showStudentName();
+							System.out.println("정보를 수정할 학생을 선택하세요.");
+							studentNum = scan.nextInt() - 1;
+							System.out.println("학생정보입니다.");
+							Student.adjustmentNum = studentNum;
+							Student.showStudent();
+							Student.adjustmentManu();
+							adjustmentNum = scan.nextInt();
+							if(adjustmentNum == 1) {
+								System.out.print("수정할 항목이름을 입력하세요. : ");
+								Student.adjustment = scan.next();
+								System.out.print("수정 내용을 입력하세요. : ");
+								adjustment = scan.next();
+								Student.adjustmentStudent(adjustment);
+								break;
+							}else if(adjustmentNum == 2) {
+								System.out.print("국어 : ");
+								String language= scan.next(); 
+								System.out.print("영어 : ");
+								String english=scan.next();
+								System.out.print("수학 : ");
+								String math=scan.next();
+								System.out.print("사회 : ");
+								String society=scan.next();
+								System.out.print("과학 : ");
+								String science=scan.next();
+								Subject.adjustmentScore(language, english, math, society, science);
+								break;
+							}
+						}else if(clst == 2) {
+							School.showClass();
+							System.out.print("반을 입력하세요. : ");
+							choice = scan.next();
+							School.showClassList(choice);
+							Student.showStudentName();
+							
+							System.out.println("정보를 수정할 학생이름을 입력하세요.");
+							studentName = scan.next();
+							System.out.printf("%s학생정보입니다.",studentName);
+							//Student.findStudentInfo(studentName);
+							Student.adjustmentManu();
+							adjustmentNum = scan.nextInt();
+							if(adjustmentNum == 1) {
+								System.out.print("수정할 항목이름을 입력하세요. : ");
+								Student.adjustment = scan.next();
+								System.out.print("수정 내용을 입력하세요. : ");
+								adjustment = scan.next();
+								Student.adjustmentStudent(adjustment);
+								break;
+							}else if(adjustmentNum == 2) {
+								System.out.print("국어 : ");
+								String language= scan.next(); 
+								System.out.print("영어 : ");
+								String english=scan.next();
+								System.out.print("수학 : ");
+								String math=scan.next();
+								System.out.print("사회 : ");
+								String society=scan.next();
+								System.out.print("과학 : ");
+								String science=scan.next();
+								Subject.adjustmentScore(language, english, math, society, science);
+								break;
+							}
 						}
 					}else if(manuNum == 3) {
 						Student.showStudentName();
@@ -99,7 +134,7 @@ public class StudentProject {
 class School{
 	static int schoolStudentNum, gradeStudentNum1, gradeStudentNum2, gradeStudentNum3;
 	static String[][][] classStudentInfo = new String[3][5][50];
-	static int g11, g12, g13, g14, g15, g21, g22, g23, g24, g25, g31, g32, g33, g34, g35;
+	static int[][] classNum = new int[3][5];
 	static void showSchoolStudentNum() {
 		schoolStudentNum = gradeStudentNum1 + gradeStudentNum2 + gradeStudentNum3;
 		System.out.println("학교 학생 수 : " + schoolStudentNum);
@@ -110,98 +145,32 @@ class School{
 		System.out.println("3학년 학생 수 : " + gradeStudentNum3);
 	}
 	static void showClass() {
+		
 		System.out.println("1학년 1반 | 1학년 2반 | 1학년 3반 | 1학년 4반 | 1학년 5반");
-		System.out.printf("%4d     %4d      %4d     %4d      %4d\n",g11,g12,g13,g14,g15);
+		System.out.printf("%4d     %4d      %4d     %4d      %4d\n",classNum[0][0],classNum[0][1],classNum[0][2],classNum[0][3],classNum[0][4]);
 		System.out.println("2학년 1반 | 2학년 2반 | 2학년 3반 | 2학년 4반 | 2학년 5반");
-		System.out.printf("%4d     %4d      %4d     %4d      %4d\n",g21,g22,g23,g24,g25);
+		System.out.printf("%4d     %4d      %4d     %4d      %4d\n",classNum[1][0],classNum[1][1],classNum[1][2],classNum[1][3],classNum[1][4]);
 		System.out.println("3학년 1반 | 3학년 2반 | 3학년 3반 | 3학년 4반 | 3학년 5반");
-		System.out.printf("%4d     %4d      %4d     %4d      %4d\n",g31,g32,g33,g34,g35);
+		System.out.printf("%4d     %4d      %4d     %4d      %4d\n",classNum[2][0],classNum[2][1],classNum[2][2],classNum[2][3],classNum[2][4]);
 	}
-	static void showClassList(String classNum) {
-		String restr = classNum.replaceAll("[^0-9]","");
+	static void showClassList(String choice) {
+		String restr = choice.replaceAll("[^0-9]","");
 		//문자열에서 0-9의 숫자만 추출
 		char gra = restr.charAt(0);
 		char gro = restr.charAt(1);
-		A : for(int i = 0; i < 3; i++) {
-			for(int j = 0; j < 5; j++) {
-				if(gra == '1' && gro == '1') {
-					for(int cnt = 0; cnt < g11; cnt++) {
-						System.out.printf("%d.%s ",cnt+1,classStudentInfo[0][0][cnt]);
-					}
-					break A;
-				}else if(gra == '1' && gro == '2') {
-					for(int cnt = 0; cnt < g12; cnt++) {
-						System.out.printf("%d.%s ",cnt+1,classStudentInfo[0][0][cnt]);
-					}
-					break A;
-				}else if(gra == '1' && gro == '3') {
-					for(int cnt = 0; cnt < g13; cnt++) {
-						System.out.printf("%d.%s ",cnt+1,classStudentInfo[0][0][cnt]);
-					}
-					break A;
-				}else if(gra == '1' && gro == '4') {
-					for(int cnt = 0; cnt < g14; cnt++) {
-						System.out.printf("%d.%s ",cnt+1,classStudentInfo[0][0][cnt]);
-					}
-					break A;
-				}else if(gra == '1' && gro == '5') {
-					for(int cnt = 0; cnt < g15; cnt++) {
-						System.out.printf("%d.%s ",cnt+1,classStudentInfo[0][0][cnt]);
-					}
-					break A;
-				}else if(gra == '2' && gro == '1') {
-					for(int cnt = 0; cnt < g21; cnt++) {
-						System.out.printf("%d.%s ",cnt+1,classStudentInfo[0][0][cnt]);
-					}
-					break A;
-				}else if(gra == '2' && gro == '3') {
-					for(int cnt = 0; cnt < g22; cnt++) {
-						System.out.printf("%d.%s ",cnt+1,classStudentInfo[0][0][cnt]);
-					}
-					break A;
-				}else if(gra == '2' && gro == '3') {
-					for(int cnt = 0; cnt < g23; cnt++) {
-						System.out.printf("%d.%s ",cnt+1,classStudentInfo[0][0][cnt]);
-					}
-					break A;
-				}else if(gra == '2' && gro == '4') {
-					for(int cnt = 0; cnt < g24; cnt++) {
-						System.out.printf("%d.%s ",cnt+1,classStudentInfo[0][0][cnt]);
-					}
-					break A;
-				}else if(gra == '2' && gro == '5') {
-					for(int cnt = 0; cnt < g11; cnt++) {
-						System.out.printf("%d.%s ",cnt+1,classStudentInfo[0][0][cnt]);
-					}
-					break A;
-				}else if(gra == '3' && gro == '1') {
-					for(int cnt = 0; cnt < g31; cnt++) {
-						System.out.printf("%d.%s ",cnt+1,classStudentInfo[0][0][cnt]);
-					}
-					break A;
-				}else if(gra == '3' && gro == '2') {
-					for(int cnt = 0; cnt < g32; cnt++) {
-						System.out.printf("%d.%s ",cnt+1,classStudentInfo[0][0][cnt]);
-					}
-					break A;
-				}else if(gra == '3' && gro == '3') {
-					for(int cnt = 0; cnt < g33; cnt++) {
-						System.out.printf("%d.%s ",cnt+1,classStudentInfo[0][0][cnt]);
-					}
-					break A;
-				}else if(gra == '3' && gro == '4') {
-					for(int cnt = 0; cnt < g34; cnt++) {
-						System.out.printf("%d.%s ",cnt+1,classStudentInfo[0][0][cnt]);
-					}
-					break A;
-				}else if(gra == '3' && gro == '5') {
-					for(int cnt = 0; cnt < g35; cnt++) {
-						System.out.printf("%d.%s ",cnt+1,classStudentInfo[0][0][cnt]);
-					}
-					break A;
-				}
-			}
+		int ga = Integer.parseInt(""+gra);
+		int go = Integer.parseInt(""+gro);
+		for(int i = 0; i < School.classNum[ga-1][go-1]; i++) {
+			System.out.printf("%S",classStudentInfo[ga-1][go-1][i]);
 		}
+		/*int tmp = 0;
+		if(gra=='1'&&gro=='1')tmp = g11;
+		if(gra=='1'&&gro=='2')tmp = g12;
+		int ga = Integer.parseInt(""+gra);
+		int go = Integer.parseInt(""+gro);
+		for(int i=0; i<tmp; i++) {
+			System.out.printf("%d.%s ",i+1,classStudentInfo[ga-1][go-1][i]);
+		}*/
 		System.out.println();
 	}
 }
@@ -241,43 +210,59 @@ class Student extends School{
 		}else if(studentInfo[studentNum][1].equals("3")) {
 			gradeStudentNum3++;
 		}
-		for(int i = 1; i < 4; i++) {
+		A : for(int i = 1; i < 4; i++) {
 			for(int j = 1; j < 6; j++) {
 				//i가 "1"일때 j가 "1"일때 
-				String gra= Integer.toString(i), gro= Integer.toString(j);
+				String grad= Integer.toString(i), grou= Integer.toString(j);
 				//int값을 String값으로 형변환
-				if(studentInfo[studentNum][1].equals(gra) &&studentInfo[studentNum][2].equals(gro)) {
-					classStudentInfo[i-1][j-1][g11] = studentInfo[studentNum][4];
+				if(studentInfo[studentNum][1].equals(grad) &&studentInfo[studentNum][2].equals(grou)) {
+					//학년이 반복i와 같고 반이 반복j와 같을때
+					classStudentInfo[i-1][j-1][classNum[i-1][j-1]] = studentInfo[studentNum][4];
 					if(i == 1 && j ==1) {
-						g11++;
+						classNum[i-1][j-1] +=1;
+						break A;
 					}else if(i == 1 && j == 2) {
-						g12++;
+						classNum[i-1][j-1] +=1;
+						break A;
 					}else if(i == 1 && j == 3) {
-						g13++;
+						classNum[i-1][j-1] +=1;
+						break A;
 					}else if(i == 1 && j == 4) {
-						g14++;
+						classNum[i-1][j-1] +=1;
+						break A;
 					}else if(i == 1 && j == 5) {
-						g15++;
+						classNum[i-1][j-1] +=1;
+						break A;
 					}else if(i == 2 && j == 1) {
-						g21++;
+						classNum[i-1][j-1] +=1;
+						break A;
 					}else if(i == 2 && j == 2) {
-						g22++;
+						classNum[i-1][j-1] +=1;
+						break A;
 					}else if(i == 2 && j == 3) {
-						g23++;
+						classNum[i-1][j-1] +=1;
+						break A;
 					}else if(i == 2 && j == 4) {
-						g24++;
+						classNum[i-1][j-1] +=1;
+						break A;
 					}else if(i == 2 && j == 5) {
-						g25++;
+						classNum[i-1][j-1] +=1;
+						break A;
 					}else if(i == 3 && j == 1) {
-						g31++;
+						classNum[i-1][j-1] +=1;
+						break A;
 					}else if(i == 3 && j == 2) {
-						g32++;
+						classNum[i-1][j-1] +=1;
+						break A;
 					}else if(i == 3 && j == 3) {
-						g33++;
+						classNum[i-1][j-1] +=1;
+						break A;
 					}else if(i == 3 && j == 4) {
-						g34++;
+						classNum[i-1][j-1] +=1;
+						break A;
 					}else if(i == 3 && j == 5) {
-						g35++;
+						classNum[i-1][j-1] +=1;
+						break A;
 					}
 				}
 			}
@@ -325,55 +310,73 @@ class Student extends School{
 		}else if(studentInfo[adjustmentNum][1].equals("3")) {
 			gradeStudentNum3--;
 		}
-		for(int i = 1; i < 4; i++) {
+		A : for(int i = 1; i < 4; i++) {
 			for(int j = 1; j < 6; j++) {
 				//i가 "1"일때 j가 "1"일때 
 				String gra= Integer.toString(i), gro= Integer.toString(j);
 				//int값을 String값으로 형변환
 				if(studentInfo[adjustmentNum][1].equals(gra) &&studentInfo[adjustmentNum][2].equals(gro)) {
-					classStudentInfo[i-1][j-1][g11] = studentInfo[adjustmentNum][4];
+					classStudentInfo[i-1][j-1][classNum[i-1][j-1]] = studentInfo[studentNum][4];
 					if(i == 1 && j ==1) {
-						g11--;
+						classNum[i-1][j-1] -=1;
+						break A;
 					}else if(i == 1 && j == 2) {
-						g12--;
+						classNum[i-1][j-1] -=1;
+						break A;
 					}else if(i == 1 && j == 3) {
-						g13--;
+						classNum[i-1][j-1] -=1;
+						break A;
 					}else if(i == 1 && j == 4) {
-						g14--;
+						classNum[i-1][j-1] -=1;
+						break A;
 					}else if(i == 1 && j == 5) {
-						g15--;
+						classNum[i-1][j-1] -=1;
+						break A;
 					}else if(i == 2 && j == 1) {
-						g21--;
+						classNum[i-1][j-1] -=1;
+						break A;
 					}else if(i == 2 && j == 2) {
-						g22--;
+						classNum[i-1][j-1] -=1;
+						break A;
 					}else if(i == 2 && j == 3) {
-						g23--;
+						classNum[i-1][j-1] -=1;
+						break A;
 					}else if(i == 2 && j == 4) {
-						g24--;
+						classNum[i-1][j-1] -=1;
+						break A;
 					}else if(i == 2 && j == 5) {
-						g25--;
+						classNum[i-1][j-1] -=1;
+						break A;
 					}else if(i == 3 && j == 1) {
-						g31--;
+						classNum[i-1][j-1] -=1;
+						break A;
 					}else if(i == 3 && j == 2) {
-						g32--;
+						classNum[i-1][j-1] -=1;
+						break A;
 					}else if(i == 3 && j == 3) {
-						g33--;
+						classNum[i-1][j-1] -=1;
+						break A;
 					}else if(i == 3 && j == 4) {
-						g34--;
+						classNum[i-1][j-1] -=1;
+						break A;
 					}else if(i == 3 && j == 5) {
-						g35--;
+						classNum[i-1][j-1] -=1;
+						break A;
 					}
 				}
 			}
 		}
+		System.out.printf("%s학생의 정보가 삭제되었습니다.\n",studentInfo[adjustmentNum][4]);
 		for(int i = adjustmentNum ; i <= studentNum; i++) {
 			for(int j = 0; j < basicInfo.length; j++) {
 				studentInfo[i][j] = studentInfo[i+1][j];
 			}
 		}
-		System.out.printf("%s학생정보가 삭제되었습니다.\n",studentInfo[adjustmentNum][4]);
 		studentNum--;
 	}
+	//static void findStudentInfo(String name) {
+		//for(int i = 0; i < classNum[i-1][j-1]; i++) {
+			
 	static void showStudent() {
 		for(int i = 0; i<basicInfo.length; i++) {
 			System.out.printf("%5s",basicInfo[i]);
