@@ -5,7 +5,8 @@ public private default protected static void Math.random ;
 %d %s %c %f %b \n String...str this super final extends nextInt
 next next().charAt(0) nextLine new length package import
 java.util.* System.arraycopy equals compareTo get set abstract 
-interface implements
+interface implements try{}catch{} throw new getMessage() finally
+printStackTrace()
 
 
 
