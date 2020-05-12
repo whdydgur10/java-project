@@ -35,7 +35,7 @@ public class SubJect extends Student {
 					if(gradeClassNumber[i][j][q] != null) {
 						System.out.printf("%d.%d학년 %d반 %d번 %s\n",number+1,i+1,j+1,q+1,gradeClassNumber[i][j][q]+ " ");
 						stuNum = q;
-						break A;
+						break ;
 					}else {
 						break;
 					}

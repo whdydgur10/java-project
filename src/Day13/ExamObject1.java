@@ -35,7 +35,6 @@ public class ExamObject1 {
 		C c = new C();
 		System.out.println(c);
 	}
-
 }
 /*class A implements Cloneable{
 	int num;
