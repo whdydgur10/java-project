@@ -9,7 +9,7 @@ public class ExamSet1 {
 		//중복되지 않는 랜덤한 수를 저장
 		int size = 3;
 		int min = 1;
-		int max = 9;
+		int max = 20;
 		while(hs.size() < size) {
 			int random = new Random().nextInt(max-min+1) + min;
 			System.out.print(random + " ");

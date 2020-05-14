@@ -69,6 +69,15 @@ public class Test15_3 {
 				cnt++;
 			}
 		}
+		for(int j = 0; j < arr.length-1; j++) {
+			for(int i = 0; i < arr.length-1; i++) {
+				if (arr[i] > arr[i+1]) {
+					int num = arr[i];
+					arr[i] = arr[i+1];
+					arr[i+1] = num;
+				}
+			}
+		}
 	}
 	static int[] createRandomArray(int max, int min, int cnt) throws Exception {
 		if(cnt > max-min +1) {
@@ -81,6 +90,15 @@ public class Test15_3 {
 			if(!contains(arr, num)) {
 				arr[nowCnt] = num;
 				nowCnt++;
+			}
+		}
+		for(int j = 0; j < arr.length-1; j++) {
+			for(int i = 0; i < arr.length-1; i++) {
+				if (arr[i] > arr[i+1]) {
+					int num = arr[i];
+					arr[i] = arr[i+1];
+					arr[i+1] = num;
+				}
 			}
 		}
 		return arr;

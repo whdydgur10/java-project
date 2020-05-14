@@ -3,6 +3,12 @@ package Day10;
 public class ExamInterface {
 
 	public static void main(String[] args) {
+		TvRemoteController remote = new TvRemoteController();
+		System.out.println(remote.chDown(RemoteController.num));
+		int num = 1;
+		num += 1;
+		final int num2 = num;
+		System.out.println(num2);
 		
 	}
 

@@ -5,8 +5,8 @@ import java.util.*;
 public class Test15_4 {
 
 	public static void main(String[] args) {
-		HashSet<Integer> lotto = new HashSet<Integer>(6);
-		HashSet<Integer> auto = new HashSet<Integer>();
+		HashSet<Integer> lotto = new HashSet<Integer>();
+		HashSet<Integer> auto;
 		int bonus;
 		int max = 15, min = 1, cnt = 6;
 		makeArray(lotto, max, min, cnt);
@@ -40,7 +40,6 @@ public class Test15_4 {
 			}
 		}
 	}
-	
 	static HashSet<Integer> makeArray(HashSet<Integer> arr, int max, int min, int cnt) {
 		while(cnt > arr.size()) {
 			int num = random(max, min);
@@ -72,11 +71,11 @@ public class Test15_4 {
 		case 6:
 			return 1;
 		case 5:
+			//return (auto.contains(bonus)) ? 2 : 3;
 			if(auto.contains(bonus)) {
 				return 2;
-			}else {
-				return 3;
 			}
+			return 3;
 		case 4:
 			return 4;
 		case 3:

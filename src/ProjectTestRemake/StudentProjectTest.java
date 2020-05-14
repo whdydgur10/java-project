@@ -3,7 +3,9 @@ package ProjectTestRemake;
 import java.util.*;
 
 public class StudentProjectTest {
-
+//gradeClassNumber [0][0][0] = 0;
+//studentArr[gradeClassNumber [0][0][0](= 0)] = "이름";
+//test [studentArr[0]][0][0] = 
 	public static void main(String[] args) {
 		Scanner scan = new Scanner(System.in);
 		School school = new School();
