@@ -27,6 +27,15 @@ public class Test17_3 {
 		}
 		return num3;
 	}
+	/*static int gcd(int num1, int num2) {
+		for(int i = num1; i > 0; i-) {
+			if(num1 % i == 0 && num2 % i == 0) {
+				return i;
+			}
+		}
+		return 1;
+	}*/
+	//작은 수부터 -1씩 줄어든다.
 	static int lcm(int num1, int num2) {
 		for(int i = gcd(num1, num2); i < num1 * num2; i++) {
 			if(i % num1 == 0 && i % num2 == 0) {
@@ -35,4 +44,8 @@ public class Test17_3 {
 		}
 		return num1 * num2;
 	}
+	/*static int lcm(int num1, int num2) {
+		return num1 * num2 / gcd(num1, num2);
+	}*/
+	//최소 공배수는 num1 * num2 / 최대공약수
 }
