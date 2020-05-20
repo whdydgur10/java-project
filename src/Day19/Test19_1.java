@@ -164,5 +164,4 @@ class Student{
 			return false;
 		return true;
 	}//비교할 때 num의 값만 비교하도록 하였다.
-
 }

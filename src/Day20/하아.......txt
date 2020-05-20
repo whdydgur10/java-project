@@ -1,0 +1,19 @@
+단어 - 품사 - 품사에 따른 뜻
+단어(키-단어, 값-품사))
+품사(키-품사, 값-뜻))
+뜻(리스트)
+
+단어만들어있는 클래스
+class Word{
+tiltle
+meaning
+wordclass
+}
+단어관계클래스
+class Re{
+Word 단어;
+Word 동사형;
+Word 과거형;
+Word 형용사형;
+
+}
