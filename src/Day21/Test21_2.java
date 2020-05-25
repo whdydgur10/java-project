@@ -18,18 +18,10 @@ public class Test21_2 {
 		Scanner scan = new Scanner(System.in);
 		ArrayList<Household> dayList = new ArrayList<Household>();
 		Household hh = null;
-		showHousehold(scan, dayList);
+		householdManager(scan, dayList);
 		scan.close();
 	}
-	public static void showHousehold() {
-		System.out.println("메뉴입니다.");
-		System.out.println("1.가계부 등록");
-		System.out.println("2.가계부 수정");
-		System.out.println("3.가계부 확인");
-		System.out.println("4.종료");
-		System.out.println("메뉴를 선택해주세요.");
-	}
-	public static void showHousehold(Scanner scan, ArrayList<Household> list) {
+	public static void householdManager(Scanner scan, ArrayList<Household> list) {
 		while(true) {
 			showHousehold();
 			int menu = scan.nextInt();
@@ -49,6 +41,14 @@ public class Test21_2 {
 			}
 			sort(list);
 		}
+	}
+	public static void showHousehold() {
+		System.out.println("메뉴입니다.");
+		System.out.println("1.가계부 등록");
+		System.out.println("2.가계부 수정");
+		System.out.println("3.가계부 확인");
+		System.out.println("4.종료");
+		System.out.println("메뉴를 선택해주세요.");
 	}
 	public static Household makeHousehold(Scanner scan) {
 		Household hh = new Household();
@@ -308,6 +308,7 @@ class Household{
 	String pay;
 	String type;
 	String content;
+	//가계부라는 배열 한줄마다 들어가는 값은 날짜 하나, 수입/지출 하나, 금액 하나, 분류 하나, 내용하나이다.
 	public Household() {
 	}
 	public Household(String date, String income, String pay, String type, String content) {
