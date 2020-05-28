@@ -52,10 +52,33 @@ select su_title
     join subject
     on su_num = co_su_num;
    #위에 있는 조회문과 같은 구문이지만 join하는 테이블 순서는 상관이 없다.*/
-select * from subject;
+/*select * from subject;
 select * from course;
 select su_title
 	from subject
+    join (select * from course where co_num like '2020@_%@_1@_%' escape '@') as co
+    #  @_ 언더바는 sql에서 어떠한 문자 하나가 올것이라는 의미를 가지고 있는데 @를 넣어줌으로써 그 기능을 없애준다. escape '@'을 써줄것
+    on co.co_su_num = su_num;*/
+/*select * from student;
+select * from attend;
+select * from course;
+select * from subject;
+select sum(su_point) as 누적학점
+	from subject
     join course
-    on co_su_num = su_num
-	where co_num like '2020_%_1_%';
+    on su_num = co_su_num
+    join attend
+    on at_co_num = co_num
+    join (select * from student where st_name = '유관순') as st
+    on at_st_num = st.st_num;*/
+select * from attachments;
+select * from board;
+select * from student;
+select bo_title as 게시글제목, bo_content as 내용, ac_file_path as 첨부, st_name as 작성자
+	from (select * from student where st_name = '홍길동') as st
+    join board
+    on st_num = bo_st_num
+    join attachments
+    on bo_num = ac_bo_num;
+#show columns from student like 'st_num';
+#student 테이블에 st_num의 대한 형식값 출력

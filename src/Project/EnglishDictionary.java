@@ -5,38 +5,51 @@ import java.util.*;
 public class EnglishDictionary {
 
 	public static void main(String[] args) {
-		
+		Scanner scan = new Scanner(System.in);
+		Word w = new Word();
+		System.out.println(w.makeWord(scan));
 
 	}
 
 }
-class Dictionary{
-	Map<String, ArrayList<String>> wordParts = new HashMap<String, ArrayList<String>>();
-	ArrayList<String> wordList = new ArrayList<String>();
-}
-class Word extends Dictionary{
-	String word;
+
+class Word{
 	String part;
 	String mean;
 	ArrayList<String> parts = new ArrayList<String>();
-	public ArrayList<String> makeWord(Scanner scan) {
+	Map<String, ArrayList<String>> words = new HashMap<String, ArrayList<String>>();
+	
+	public Map<String, ArrayList<String>> makeWord(Scanner scan) {
+		Map<String, ArrayList<String>> words = new HashMap<String, ArrayList<String>>();
 		ArrayList<String> list = new ArrayList<String>();
-		Dictionary d = new Dictionary();
-		System.out.print("단어를 입력하세요. : ");
-		this.word = scan.next();
-		this.part = scan.next();
-		this.mean = scan.next();
-		list.add(part);
+		System.out.print("단어 : ");
+		String word = scan.next();
+		System.out.println("뜻 : ");
+		mean = scan.next();
 		list.add(mean);
-		d.wordParts.put(word, list);
-		return list;
+		System.out.print(word + "에 대한 내용을 추가하시겠습니까? y/n ");
+		char is = scan.next().charAt(0);
+		while(is == 'y' || is == 'Y') {
+			System.out.println(word + "의 다른 형태");
+			part = scan.next();
+			System.out.println("뜻 : ");
+			mean = scan.next();
+			list.add(part);
+			list.add(mean);
+			System.out.print(word + "에 대한 내용을 추가하시겠습니까? y/n ");
+			is = scan.next().charAt(0);
+			if(!(is == 'n' || is == 'N' || is == 'y' || is == 'Y')) {
+				System.out.println("잘못된 입력입니다.");
+			}
+		}
+		words.put(word, list);
+		return words;
 	}
-	public Map<String, ArrayList<String>> makeWordParts(Scanner scan) {
-		
-	}
+
 	@Override
 	public String toString() {
-		return "part : " + part + ", mean : " + mean;
+		return "Word " + part + ", mean=" + mean + ", parts=" + parts + ", words=" + words + "]";
 	}
+	
 	
 }

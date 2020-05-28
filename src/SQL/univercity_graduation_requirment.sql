@@ -1,0 +1,1 @@
+SELECT * FROM univercity.graduation_requirment;
