@@ -80,5 +80,7 @@ select bo_title as 게시글제목, bo_content as 내용, ac_file_path as 첨부
     on st_num = bo_st_num
     join attachments
     on bo_num = ac_bo_num;
+#show columns from student;
+#student 테이블의 모든 속성의 형식 출력
 #show columns from student like 'st_num';
-#student 테이블에 st_num의 대한 형식값 출력
+#student 테이블에 st_num의 대한 형식 출력
