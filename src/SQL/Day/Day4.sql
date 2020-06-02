@@ -100,7 +100,7 @@ begin
 end//
 delimiter ;*/
 #구매취소시 재고량 증가와 구매금액 감소
-/*drop trigger if exists update_all_price
+drop trigger if exists update_all_price
 delimiter //
 create trigger update_all_price after update on order_list
 for each row
@@ -111,8 +111,7 @@ begin
     declare price_ int default 0;
     declare _all_price int default 0;
     declare all_price_ int default 0;
-    set amount_ = (select amount from product_enrollment where list = old.pe_list);
-    set amount_ = amount_ + old.all_quantity;
+    set amount_ = (select amount from product_enrollment where list = old.pe_list) + old.all_quantity;
 		update product_enrollment
         set amount = amount_
         where list = old.pe_list;
@@ -121,13 +120,11 @@ begin
 						join product_enrollment
 						on code = pd_code
 						where list = old.pe_list);
-	set all_price_ = (select all_price from shopping.order where num = old.or_num);
-    set all_price_ = all_price_ - old.all_quantity * price_;
+	set all_price_ = (select all_price from shopping.order where num = old.or_num) - old.all_quantity * price_;
     update shopping.order
 		set all_price = all_price_
         where num = old.or_num;
-	set _amount = (select amount from product_enrollment where list = new.pe_list);
-	set _amount = _amount - new.all_quantity;
+	set _amount = (select amount from product_enrollment where list = new.pe_list) - new.all_quantity;
 		update product_enrollment
 			set amount = _amount
 			where list = new.pe_list;
@@ -142,5 +139,5 @@ begin
 		set all_price = _all_price
         where num = new.or_num;
 end//
-delimiter ;*/
+delimiter ;
 #구매수정시 재고량 수정과 구매금액 수정
