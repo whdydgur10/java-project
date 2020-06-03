@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input><br>
+    <!-- 정보입력 태그 - inline태그 + block태그 -->
+    <input type="text"><br>
+    <!-- type : 입력, 검색 등 다양한 곳에서 사용 -->
+    <input type="text" value="초기값"><br>
+    <!-- value : 초기값 설정 -->
+    <input type="text" placeholder="입력창입니다."><br>
+    <!-- placeholder : 초기값 설정 후 입력시 자동 삭제-->
+    <input type="text" value="읽기" readonly><br>
+    <!-- readonly | readonly = "true" | readonly = "readonly" : 지정한 문자열만 보며 수정이 불가능하도록 할 때 -->
+    <input type="password" placeholder="비밀번호"><br>
+    <!-- password : 비밀번호를 관리 -->
+    <input type="button" value="..."><br>
+    <!-- button : input태그를 이용한 버튼 생성 -->
+    <form>
+        <input type="text" name="data"><br>
+        <input type="submit" value="보내기"><br>
+        <!-- submit : 같은 form태그 안에 있는 input태그들의 값들을 서버로 전송하는 버튼 ?data=1 -->
+        <input type="reset" value="리셋"><br>
+        <!-- reset : 같은 form태그 안에 있는 input태그들의 값을 초기값으로 변경-->
+    </form>
+    <form>
+        좋아하는 중국집 음식을 선택(다중 선택 가능) <br>
+        <input type="checkbox" name="food" value="짜장"> 짜장
+        <input type="checkbox" name="food" value="짬뽕"> 짬뽕
+        <input type="checkbox" name="food" value="탕수육"> 탕수육<br>
+        <input type="submit" value="전송"><br>
+        <!-- 체크박스 : 0이상의 선택 - value는 서버에 데이터를 전송할 때 보내는 값을 설정 -->
+    </form>
+    <form>
+        <input type="radio" name="gender" value="male" id="male" checked>
+        <label for="male">남성</label>
+        <input type="radio" name="gender" value="female" id="female">
+        <label for="female">여성</label><br>
+        <input type="submit" value="전송"><br>
+        <!-- 라디오박스 : 1개만 선택 - 같은 name인 라디오 박스 중 1개만 선택 -->
+        <!-- checked : 라디오박스 기본값 설정 - 같은 name에 2개 이상이 있으면 가장 마지막에 적용 -->
+        <!-- label : id로 연결한 속성을 복사한다. - 문자열에 박스기능을 첨부 -->
+        <!-- id : 태그의 고유키로 사용 -->
+        <!-- name : 전송 시 전송하는 데이터의 이름 -->
+    </form>
+    <form>
+        <input type="email" name="email">
+        <input type="submit" value="전송">
+        <!-- email : 입력한 값이 이메일 형태인지 판별 -->
+    </form>
+    <input type="file"><br>
+    <!-- file : 첨부파일 불러오기 - 서버에 전송 가능-->
+    <input type="hidden" value="123"><br>
+    <!-- hidden : 화면에서만 보이지 않는 정보 - 보여줄 필요가 없을 때 -->
+    </form>
+    <input type="month"><br>
+    <!-- month : 년 월 표시 -->
+    <input type="week"><br>
+    <!-- week : 년 주 표시 -->
+    <input type="date"><br>
+    <!-- date : 년 월 일 표시 -->
+    <input type="datetime"><br>
+    <!-- datetime : 년 시 분 초 -->
+    <input type="datetime-local"><br>
+    <!-- datetime-local : 년 월 일 시 분 초 -->
+    <input type="time"><br>
+    <!-- time :" 시 분 초" -->
+    <input type="image" width="100px" height="auto" src="data:image/jpeg;base64,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"><br>
+    <input type="image" width="100px" height="auto" src="다운로드.jpg" alt="이미지 없음">
+    <!-- image : 이미지를 추가 - img태그로 대체 가능 -->
+    <!-- alt : 이미지가 없을 경우 보여주는 문구 -->
+    <!-- html 파일과 이미지 파일이 같은 폴더에 있는 경우 파일명만 붙여도 된다. -->
+    <form>
+        <input type="url" name="url">
+        <input type="submit" value="전송">
+        <!-- url : 정규 표현식을 이용하여 일괄 처리 -->
+    </form>
+    <input type="search" name="search">
+    <!-- search : text와 비슷하나 x버튼으로 초기화할 수 있다. -->
+    <form>
+        <input type="range" name="range">
+        <!-- range : 범위를 조절하나 브라우저 별로 형태가 달라 이용률이 적다. -->
+        <input type="color" name="color">
+        <!-- color : 색상 정보를 16진수로 가져옴 - RGB(Red,Green,Blue)로 표현하고 각각 0~255의 값을 가진다. -->
+        <input type="submit" value="전송">
+    </form>
+   
+</body>
+</html>
