@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>css 예제1</title>
+    <!-- 스타일을 적용하는 방법 
+            1. 태그 속성 중 style 속성을 이용
+                style="속성명1:값1; 속성명2:값2;"
+            2. style 태그를 이용
+                head태그 안에 생성
+            3. link 태그를 이용하여 css에 연결
+                head 태그 안에 생성 style과 link중 link가 상위에 위치
+                css파일이 있는 경우 -->
+    <link rel="stylesheet" href="cssEx1.css">
+    <style>
+        .hi{
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+    <p style="color: red; background-color: saddlebrown;">1번 스타일</p>
+    <p class="hi">2번 스타일</p>
+    <p class="hi2">3번 스타일</p>
+</body>
+</html>

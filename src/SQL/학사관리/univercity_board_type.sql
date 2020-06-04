@@ -1,1 +1,0 @@
-SELECT * FROM univercity.board_type;

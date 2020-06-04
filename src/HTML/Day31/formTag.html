@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action=""></form>
+    <!-- action : 데이터를 전송할 주소, 없는 경우 현재 URL,URI
+    URL : http://127.0.0.1:5500/Day30/aTag.html 끝주소가 확장자명
+    URI : http://127.0.0.1:5500/Day30/aTag -->
+    <!-- method : 데이터 전송 방식
+            - get : 기본값, URL에 ?변수명1=값1 & 변수명2=값2 (변수명은 name="변수명1" 값은 value="값1")형태로 전송 보안에 취약 
+            - post : Servelte-Request에 데이터를 숨겨서 전송-->
+    <!-- enctype : 데이터의 MIME(contents 타입) 유형
+            - application/x-www.form-urlencoded : 기본값
+            - multipart/form-data : 첨부파일 보내기
+            - text/plain : HTML 5에서 디버깅 용으로 추가된 값 -->
+    <!-- autocomplete : 검색내역 보여주기 및 자동완성 -->
+    <form action="" method="get" enctype="multipart/form-data" autocomplete="off">
+        <input type="email" name="email">
+        <button>전송</button>
+    </form>
+</body>
+</html>

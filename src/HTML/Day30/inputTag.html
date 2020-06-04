@@ -23,7 +23,7 @@
     <form>
         <input type="text" name="data"><br>
         <input type="submit" value="보내기"><br>
-        <!-- submit : 같은 form태그 안에 있는 input태그들의 값들을 서버로 전송하는 버튼 ?data=1 -->
+        <!-- submit : 같은 form태그 안에 있는 input태그들의 값들을 서버(?data=입력값)로 전송하는 버튼 -->
         <input type="reset" value="리셋"><br>
         <!-- reset : 같은 form태그 안에 있는 input태그들의 값을 초기값으로 변경-->
     </form>
@@ -33,7 +33,7 @@
         <input type="checkbox" name="food" value="짬뽕"> 짬뽕
         <input type="checkbox" name="food" value="탕수육"> 탕수육<br>
         <input type="submit" value="전송"><br>
-        <!-- 체크박스 : 0이상의 선택 - value는 서버에 데이터를 전송할 때 보내는 값을 설정 -->
+        <!-- 체크박스 : 0이상의 선택 - value는 서버에 데이터를 전송할 때 보내는 값을 설정(?food=짜장) -->
     </form>
     <form>
         <input type="radio" name="gender" value="male" id="male" checked>
@@ -88,6 +88,5 @@
         <!-- color : 색상 정보를 16진수로 가져옴 - RGB(Red,Green,Blue)로 표현하고 각각 0~255의 값을 가진다. -->
         <input type="submit" value="전송">
     </form>
-   
 </body>
 </html>
