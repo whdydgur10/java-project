@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>박스 예제</title>
     <style>
-        div{
+        .first{
             background-color: springgreen;
             margin-top: 50px;
             margin-left: 50px;
@@ -14,16 +14,28 @@
             border-top-width: 1px;
             border-top-color: red;
             border-top-style: groove;
+            padding-top: 10px;
+            padding-left: 10px;
+        }
+        .second{
+            margin: 50px;
+            padding: 50px;
+            padding-left: 200px;
             border-width: 1px;
             /*전체*/
             border-width: 1px 2px 3px 4px;
             /*top right bottom left 순*/
             border: 1px solid purple;
         }
+        /*
+        block태그 : 새 라인에서 시작, 가로, 세로의 길이 조절 가능, 여백 조절 가능
+        inline태그 : 현재 라인을 유지, 가로, 세로, 여백 조절 불가능
+        inline-block태그 : 현재 라인을 유지, 가로, 세로, 여백 조절 가능
+        */
     </style>
 </head>
 <body>
-    <div>g<br>g<br>g<br>g<br>g<br>g<br>g<br>g<br>g</div>
-    ghghghghghghghgghghghg
+    <div class="first">g<br>g<br>g<br>g<br>g<br>g<br>g<br>g<br>g</div>
+    <div class="second">ghghghghghghghgghghghg</div>
 </body>
 </html>

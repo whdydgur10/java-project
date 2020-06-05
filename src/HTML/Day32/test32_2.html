@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            margin: 10px 25%;
+            width: 50%;
+            height: 500px;
+            background-color: red;
+            display: inline-block;
+        }
+        div::after{
+            clear: both;
+            content: "";
+            display: block;
+        }
+        /* float을 사용한 컨텐츠의 부모의 높이가 설정되어있으면 적용할 필요가 없다. */
+        .boxone{
+            margin: 0px;
+            width: 50%;
+            height: 250px;
+            background-color: blue;
+            float: left;
+            /* float은 block과 inline-block에 상관없이 동작 */
+            box-sizing: border-box;
+            border: 5px solid black;
+            /* box-sizing : 컨텐츠의 크기를 계산하는 방식
+                - border-box : 속성에서 설정한 가로와 세로의 길이가 테두리, 패딩, 컨텐츠를 합한 크기다.
+                - content-box : 기본, 속성에서 설정된 가로와 세로의 길이가 컨텐츠의 가로 세로의 길이가 된다. */
+        }
+        .boxtwo{
+            margin: 0px;
+            width: 50%;
+            height: 250px;
+            background-color: blueviolet;
+            box-sizing: border-box;
+            border: 5px solid gray;
+        }
+        .boxone:nth-of-type(2){
+            background-color: chartreuse;
+            /* 2번째 요소 */
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <div class="boxone"></div>
+        <div class="boxone"></div>
+        <div class="boxtwo"></div>
+    </div>
+</body>
+</html>

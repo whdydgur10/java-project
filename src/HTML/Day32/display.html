@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            width: 50px;
+            height: 300px;
+            background-color: blueviolet;
+            display: inline-block;
+            /*display : 태그 설정 block | inline | inline-block | none */
+            float: left;
+            float : 좌우 밀착 - 좌우 여백 삭제 - 부모의 영역을 벗어난다. left | right */
+        }
+        body{
+            border: 1px solid red;
+        }
+        /* block태그들의 크기는 안에 컨텐츠의 크기가 된다. */
+        body::after{
+            clear: both;
+            content: "";
+            display: block;
+        }
+        /* float을 사용하면 공식처럼 따라온다. -  */
+        /*
+        body{
+            font-size: 0px;
+        }
+        body>*{
+            font-size: 16px;
+        }*/
+    </style>
+</head>
+<body>
+    <div class="box">1</div><div class="box">1</div>
+    <div class="box">1</div>
+</body>
+</html>
