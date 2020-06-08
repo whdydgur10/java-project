@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>list</title>
+    <style>
+        ul{
+            /* list-style-type: none; */
+            /* list와 관련된 css 속성은 list마커와 관련된 속성이다. 
+            메뉴를 구성할 때 주로 ul태그와 li태그로 구성하여 마커를 제거한다.*/
+            list-style-position: inside;
+            /* li태그 안에 마커 */
+            /* list-style-position: outside; */
+            /* li태그 밖에 마커 */
+            list-style-image: url(../Day32/꽃.jpg);
+            /*  list-style-type: ; - 마커의 기본 모양을 선택
+                list-style-position: ; - 마커의 위치
+                list-style-image: ; - 마커의 모양을 이미지로 선택*/
+        }
+        li{
+            background-color: tomato;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li>사과</li>
+        <li>배</li>
+        <li>포도</li>
+    </ul>
+</body>
+</html>

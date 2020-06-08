@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test33_2</title>
+    <style>
+        *{
+            margin: 0;
+        }
+        @keyframes move{
+            0%{
+                top: 0px;
+                left: 0px;
+            }
+            25%{
+               top: calc(100% - 100px);
+               left: calc(100% - 100px);
+            }
+            50%{
+                top: 0;
+                left: calc(100% - 100px);
+            }
+            75%{
+                top: calc(100% - 100px);
+                left: 0;
+            }
+            100%{ 
+                top: 0px;
+                left: 0px;
+            }
+        }
+        div{
+            height: 500px;
+        }
+        .box{
+            border: 5px solid black;
+            width: 100px;
+            height: 100px;
+            animation-name: move;
+            animation-iteration-count: infinite;
+            animation-duration: 5s;
+            position: absolute;
+            box-sizing: border-box;
+        }
+        .box2{
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 100px;
+            border: 5px solid red;
+            box-sizing: border-box;
+            /* width가 없으면 left와 right를 사용해 대신 나타낼 수 있고,
+            height가 없으면 top과 bottom을 사용해 대신 나타낼 수 있다.
+            그 외에는 서로 사용할 수 없다. */
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+    <div class="box2"></div>
+</body>
+</html>

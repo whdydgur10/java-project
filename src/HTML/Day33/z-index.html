@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>z-index</title>
+    <style>
+        /* z-index는 한 지점에 여러 요소가 겹쳐 있는 경우 요소들 중 위로 또는 아래로 보낼건지 결정하는 속성 */
+        body{
+            margin: 0;
+        }
+        .box{
+            width: 200px;
+            height: 400px;
+            background-color: beige;
+            border: 3px solid tan;
+            display: inline-block;
+        }
+        .box1{
+            position: absolute;
+            top: 30px;
+            left: 30px;
+        }
+        .box2{
+            position: absolute;
+            top : 60px;
+            left: 60px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+    <div class="box box1"></div>
+    <div class="box box2"></div>
+</body>
+</html>

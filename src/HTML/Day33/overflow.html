@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>overflow</title>
+    <style>
+        body{
+            height: 500px;
+            border: 5px solid rgb(107, 107, 62);
+            overflow: hidden;
+            
+        }
+        .box{
+            height: 600px;
+            border: 5px solid violet;
+            overflow: auto;
+            /* 자식이 부모보다 크거나 범위를 벗어날 경우 내용에 대한 처리방법을 결정하는 속성 
+                visible : 기본값
+                hidden : 가리기
+                scroll : 무조건 스크롤 생성
+                auto : 넘어갈 때 스크롤 생성*/
+            /* 작업할 공간의 크기와 위치가 정해지고 작업 도중 다른 영역을 침범하지 않게 하기 위해 사용한다. */
+        }
+        .box2{
+            height: 700;
+            background-color: tomato;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+        8일 오전 제주도 GS칼텍스 무수천주유소. 이곳에서 각각 1.3㎞와 0.8㎞ 떨어진 펜션과 초등학교에서 GS편의점 앱을 통해 도시락 주문이 들어오자, 편의점과 함께 있는 GS칼텍스 주유소에서 주문된 물품을 드론에 실어 배송한다. 드론이 배송을 마치고 돌아오는 데는 5~6분 정도가 걸렸다. 산업통상자원부와 한국전자통신연구원, GS칼텍스 등은 이날 제주도에서 '드론 활용 유통물류 혁신 실증 시연' 행사를 열었다. 산업부는 내후년까지 총 352억원을 투입해 드론을 활용한 물류 서비스 플랫폼 구축과 실증사업 등을 추진 중이다. 이번 행사는 이 사업의 일환으로 개발된 자율드론이 GS25 상품을 소비자에게 배송하는 것을 시연한 것이다. 
+        정부는 코로나19 감염이 확산하면서 비대면 서비스 수요가 확대됨에 따라 드론 배송 서비스 조기 상용화를 목적으로 GS칼텍스 등 수요기업과 함께 도서산간지역에서 실증사업을 진행 중이다. 산업부는 초기 도서산간지역 드론배송서비스를 통해 생활·안전 상비 물품 등을 신속하게 배송할 수 있어 유통물류 배송 사각지대에 거주하는 노약자나 주민에게 도움이 될 것으로 기대했다.
+        <div class="box2">
+
+        </div>
+    </div>
+</body>
+</html>

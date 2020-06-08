@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>animation</title>
+    <style>
+        /*  1. 애니메이션 등록
+            2. 등록한 애니메이션 호출 */
+        @keyframes zoomin{
+           0%{
+               font-size: 16px;
+           }
+           /* 시작할 시간비율 0%(=from)*/
+           50%{
+               font-size: 200px;
+           }
+           100%{
+               font-size: 16px;
+           }
+           /* 끝나는 시간비율 100%(=to)*/
+        }
+        /* 1. 애니메이션 등록 */
+        .zoomin1,.zoomin2,.zoomin3,.zoomin4,.zoomin5{
+            animation-name: zoomin;
+            /* 애니메이션 선택 */
+            animation-duration: 3s;
+            /* 애니메이션 실행 시간 */
+            animation-iteration-count: infinite;
+            /* 애니메이션 반복 횟수 */
+            animation-timing-function: linear;
+            /* 시간에 따른 속도 */
+        }
+        .zoomin2{
+            animation-timing-function: ease-in-out;
+        }
+        .zoomin3{
+            animation-timing-function: ease-in;
+        }
+        .zoomin4{
+            animation-timing-function: step-start;
+        }
+        .zoomin5{
+            animation-timing-function: steps();
+        }
+        /* 2. 애니메이션 호출 */
+        div{
+            height: 250px;
+            float: left;
+        }
+        body::after{
+            clear: both;
+            content: '';
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <span class="zoomin1">꽝</span>
+    </div>
+    <div>
+        <span class="zoomin2">꽝</span>
+    </div>
+    <div>
+        <span class="zoomin3">꽝</span>
+    </div>
+    <div>
+        <span class="zoomin4">꽝</span>
+    </div>
+    <div>
+        <span class="zoomin5">꽝</span>
+    </div>
+</body>
+</html>

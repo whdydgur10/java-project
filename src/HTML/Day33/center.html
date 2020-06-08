@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>center</title>
+    <style>
+        *{
+            margin: 0;
+        }
+        .box{
+            width: 500px;
+            height: 500px;
+            /* height의 %값은 부모 태그의 높이를 기준으로 하기 때문에 초기값이 없으면 0이다..
+                vw : 브라우저 가로의 길이
+                vh : 브라우저 세로의 길이 */
+            background-color: wheat;
+            margin: 0 auto;
+            margin-top: calc(50vh - 250px);
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+</body>
+</html>
