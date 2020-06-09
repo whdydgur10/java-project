@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            
+        }
+        .title{
+            width: 300px;
+            height: 50px;
+            position: absolute;
+            top: 100px;
+            left: calc(50% - 150px);
+            font-weight: 700;
+            font-size: 40px;
+            text-align: center;
+            line-height: 50px;
+        }
+        .id{
+            width: 300px;
+            height: 100px;
+            position: absolute;
+            top: 200px;
+            left: calc(50% - 150px);
+            font-size: 20px;
+        }
+        .idbox{
+            border: 1px solid black;
+            background-color: white;
+        }
+        .idbox>input:nth-of-type(1){
+            width: 190px;
+            border: none;
+            line-height: 30px;
+            background-color: white; 
+            font-size: 15px;
+        }
+        .idbox>input:nth-of-type(2){
+            width: 90px;
+            border: none;
+            line-height: 30px;
+            background-color: white;
+            font-size: 15px;
+        }
+        .currect{
+            color: red;
+            width: 230px;
+            height: 10px;
+            font-size: 10px;
+            float: left;
+            visibility: hidden;
+        }
+        .pw{
+            margin: 0 auto;
+            width: 300px;
+            height: 100px;
+            position: absolute;
+            top: 300px;
+            left: calc(50% - 150px);
+            font-size: 20px;
+        }
+        .pw2{
+            margin: 0 auto;
+            width: 300px;
+            height: 100px;
+            position: absolute;
+            top: 400px;
+            left: calc(50% - 150px);
+            font-size: 20px;
+        }
+        .pwbox, .pw2box{
+            width: 300px;
+            border: 1px solid black;
+            background-color: white;
+        }
+        .pwbox>input, .pw2box>input{
+            width: 290px;
+            border: none;
+            line-height: 30px;
+            background-color: white;
+            font-size: 15px;
+        }
+        .email{
+            margin: 0 auto;
+            width: 300px;
+            height: 100px;
+            position: absolute;
+            top: 500px;
+            left: calc(50% - 150px);
+            font-size: 20px;
+        }
+        .emailbox{
+            border: 1px solid black;
+            background-color: white;
+        }
+        .emailbox>input{
+            width: 150px;
+            line-height: 30px;
+            border: none;
+            background-color: white;
+            font-size: 15px;
+        }
+        .emailbox>select{
+            border: none;
+            width: 100px;
+            line-height: 30px;
+            background-color: white;
+            font-size: 15px;
+        }
+        .gender{
+            margin: 0 auto;
+            width: 300px;
+            height: 100px;
+            position: absolute;
+            top: 600px;
+            left: calc(50% - 150px);
+            font-size: 20px;
+        }
+        .genderbox{
+            border: 1px solid black;
+            background-color: white;
+            height: 35px;
+        }
+        .genderbox>select, select>option{
+            width: 290px;
+            line-height: 30px;
+            font-size: 15px;
+            border: none;
+            background-color: white;
+        }
+        .name{
+            margin: 0 auto;
+            width: 300px;
+            height: 100px;
+            position: absolute;
+            top: 700px;
+            left: calc(50% - 150px);
+            font-size: 20px;
+        }
+        .namebox{
+            border: 1px solid black;
+            background-color: white;
+            height: 35px;
+        }
+        .namebox>input{
+            width: 290px;
+            border: none;
+            line-height: 30px;
+            font-size: 15px;
+            background-color: white;
+        }
+        .birthday{
+            margin: 0 auto;
+            width: 300px;
+            height: 100px;
+            position: absolute;
+            top: 800px;
+            left: calc(50% - 150px);
+            font-size: 20px;
+        }
+        .birthdaybox{
+            border: 1px solid black;
+            background-color: white;
+            font-size: 15px;
+            line-height: 35px;
+        }
+        .birthdaybox>select{
+            border: none;
+            width: 70px;
+            background-color: white;
+            line-height: 30px;
+        }
+        .phone{
+            margin: 0 auto;
+            width: 300px;
+            height: 100px;
+            position: absolute;
+            top: 900px;
+            left: calc(50% - 150px);
+            font-size: 20px;
+        }
+        .phonebox{
+            border: 1px solid black;
+            background-color: white;
+            font-size: 15px;
+            line-height: 35px;
+        }
+        .phonebox>input{
+            width: 80px;
+            line-height: 30px;
+            background-color: white;
+            border: none;
+            font-size: 15px;
+        }
+        .number{
+            float: left;
+        }
+        .complete>button{
+            margin: 0 auto;
+            width: 300px;
+            height: 50px;
+            position: absolute;
+            top: 1100px;
+            left: calc(50% - 150px);
+            font-size: 20px;
+            background-color: white;
+        }
+    </style>
+</head>
+<body>
+    <thead>
+        <div class="title">
+            회원가입
+        </div>
+    </thead>
+    <tfoot>
+        <div class="complete">
+            <button type="submit">가입하기</button>
+        </div>
+    </tfoot>
+    <tbody>
+        <div class="id">
+            아이디
+            <div class="idbox">
+                <input type="text" name="id">
+                <input type="text" name="email" readonly placeholder="@naver.com">
+            </div>
+            <div class="currect">중복된 아이디입니다.</div>
+            <button class="bt">중복확인</button>
+        </div>
+        <div class="pw">
+            비밀번호
+            <div class="pwbox">
+                <input type="password" name="pw">
+            </div>
+        </div>
+        <div class="pw2">
+            비밀번호 재확인
+            <div class="pw2box">
+                <input type="password" name="pw">
+            </div>
+        </div>
+        <div class="email">
+            본인확인 이메일
+            <div class="emailbox">
+                <input type="text" name="email">
+                @
+                <select name="email">
+                    <option value="naver.com" selected>naver.com</option>
+                    <option value="gmail.com">gmail.com</option>
+                    <option value="kakaocorn.com">kakaocorn.com</option>
+                </select>
+            </div>
+        </div>
+        <div class="gender">
+            성별
+            <div class="genderbox">
+                <select name="gender" >
+                    <option value="" selected>성별</option>
+                    <option value="male">남자</option>
+                    <option value="female">여자</option>
+                </select>
+            </div>
+        </div>
+        <div class="name">
+            이름
+            <div class="namebox">
+                <input type="text" name="name">
+            </div>
+        </div>
+        <div class="birthday">
+            생년월일
+            <div class="birthdaybox">
+                <select name="year">
+                    <option value="" selected>년</option>
+                    <option value="1990">1990</option>
+                    <option value="1991">1991</option>
+                    <option value="1992">1992</option>
+                    <option value="1993">1993</option>
+                    <option value="1994">1994</option>
+                    <option value="1995">1995</option>
+                    <option value="1996">1996</option>
+                    <option value="1997">1997</option>
+                    <option value="1998">1998</option>
+                    <option value="1999">1999</option>
+                    <option value="2000">2000</option>
+                    <option value="2001">2001</option>
+                    <option value="2002">2002</option>
+                    <option value="2003">2003</option>
+                    <option value="2004">2004</option>
+                    <option value="2005">2005</option>
+                    <option value="2006">2006</option>
+                    <option value="2007">2007</option>
+                    <option value="2008">2008</option>
+                    <option value="2009">2009</option>
+                    <option value="2010">2000</option>
+                    <option value="2011">2000</option>
+                    <option value="2012">2000</option>
+                    <option value="2013">2000</option>
+                    <option value="2014">2000</option>
+                    <option value="2015">2000</option>
+                    <option value="2016">2000</option>
+                    <option value="2017">2000</option>
+                    <option value="2018">2018</option>
+                    <option value="2019">2019</option>
+                    <option value="2020">2020</option>
+                </select>
+                년
+                <select name="month">
+                    <option value="" selected>월</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                    <option value="11">11</option>
+                    <option value="12">12</option>
+                </select>
+                월
+                <select name="day">
+                    <option value="" selected>일</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                    <option value="11">11</option>
+                    <option value="12">12</option>
+                    <option value="13">13</option>
+                    <option value="14">14</option>
+                    <option value="15">15</option>
+                    <option value="16">16</option>
+                    <option value="17">17</option>
+                    <option value="18">18</option>
+                    <option value="19">19</option>
+                    <option value="20">20</option>
+                    <option value="21">21</option>
+                    <option value="22">22</option>
+                    <option value="23">23</option>
+                    <option value="24">24</option>
+                    <option value="25">25</option>
+                    <option value="26">26</option>
+                    <option value="27">27</option>
+                    <option value="28">28</option>
+                    <option value="29">29</option>
+                    <option value="30">30</option>
+                    <option value="31">31</option>
+                </select>
+                일
+            </div>
+        </div>
+        <div class="phone">
+            휴대전화
+            <div class="phonebox">
+                <input type="text">
+                - <input type="text">
+                - <input type="text">
+            </div>
+            <div class="number">
+                <input type="text" name="number" disabled placeholder="인증번호 입력">
+                <button type="submit" >인증번호 받기</button>
+            </div>
+        </div>
+    </tbody>
+</body>
+</html>

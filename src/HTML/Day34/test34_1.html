@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test34_1</title>
+    <style>
+        *{
+            margin: 0;
+            background-color: whitesmoke;
+        }
+        input{
+            height: 40px;
+            width: 300px;
+            border: 1px solid black;
+            box-sizing: border-box;
+            text-align: center;
+            background-color: white;
+        }
+        .title{
+            height: 100px;
+            width: 400px;
+            position: absolute;
+            color: black;
+            top: 50px;
+            left: calc(50% - 200px);
+            font-size: 35px;
+            text-align: center;
+        }
+        .id{
+            height: 50px;
+            width: 300px;
+            position: absolute;
+            top: 200px;
+            left: calc(50% - 150px);
+            font-size: 20px;
+            box-sizing: border-box;
+        }
+        #id{
+            height: 40px;
+            width: 210px;
+            border: 1px solid white;
+            float: left;
+        }
+        #email{
+            height: 40px;
+            width: 90px;
+            border: 0px solid white;
+        }
+        .id>.currect{
+            height: 10px;
+            width: 230px;
+            font-size: 10px;
+            color: red;
+            float: left;
+            visibility: hidden;
+        }
+        .pw{
+            height: 50px;
+            width: 300px;
+            position: absolute;
+            top: 300px;
+            left: calc(50% - 150px);
+            font-size: 20px;
+        }
+        .pw2{
+            height: 50px;
+            width: 300px;
+            position: absolute;
+            top: 400px;
+            left: calc(50% - 150px);
+            font-size: 20px;
+        }
+        .email{
+            height: 50px;
+            width: 300px;
+            position: absolute;
+            top: 500px;
+            left: calc(50% - 150px);
+            font-size: 20px;
+        }
+        .email>input{
+            height: 40px;
+            width: 170px;
+        }
+        .email>select{
+            height: 40px;
+            width: 90px;
+            background-color: white;
+        }
+        .gender{
+            height: 50px;
+            width: 300px;
+            position: absolute;
+            top: 600px;
+            left: calc(50% - 150px);
+            font-size: 20px;
+        }
+        
+    </style>
+</head>
+<body>
+    <thead>
+        <div class="title"><h1>회원가입</h1></div>
+    </thead>
+    <tbody>
+        <div class="id">
+            아이디
+            <div>
+                <input type="text" name="id" placeholder="아이디" id="id">
+                <input type="text" name="email" placeholder="@naver.com" readonly id="email">
+            </div>
+            <div class="currect">아이디가 중복됩니다.</div>
+            <button type="submit">중복확인</button> 
+        </div>
+        <div class="pw">
+            비밀번호 <input type="password" name="pw" placeholder="비밀번호">
+        </div>
+        <div class="pw2">
+            비밀번호 확인 <input type="password" name="pwcheck" placeholder="비밀번호 확인">
+        </div>
+        <div class="email">
+            이메일<br> 
+            <input type="text" name="id" placeholder="이메일아이디"> @
+                <select name="email">
+                    <option value="" selected>이메일주소</option> 
+                    <option value="naver.com">naver.com</option>  
+                    <option value="gmail.com">gmail.com</option>  
+                    <option value="kakaocorn.com">kakaocorn.com</option>
+                </select>
+        </div>
+        <div class="gender">
+            성별 
+            <input type="radio" name="gender" value="mail" id="mail" checked>남성
+            <input type="radio" name="gender" value="femail" id="femail">여성
+        </div>
+        <div class="phone">
+            전화번호 
+            <input type="number" name="phone1"> - 
+            <input type="number" name="phone2"> - 
+            <input type="number" name="phone3"></div>
+    </tbody>
+    <tfoot>
+        <div class="submit"><input type="submit" value="회원가입"></div>
+    </tfoot>
+</body>
+</html>
